@@ -2,7 +2,8 @@
   "name": "inline-wasm",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "test": "jest"
   },
