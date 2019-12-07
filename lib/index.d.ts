@@ -3,7 +3,6 @@ import { WasmModule as WM } from "wabt";
 declare namespace InlineWebAssembly {}
 
 interface WasmModule extends WM {
-  [any: string]: any;
   /**
    * Read a string from the module memory by providing a pointer (the position of the first character).
    * 
@@ -20,7 +19,7 @@ interface WasmModule extends WM {
    * For this to work as expected you have to either export the memory from the WebAseembly code or import it from
    * JavaScript, through the import object. 
    */
-  createString(string: string, memoryLocation: number): number;
+  createString(string: string, memoryLocation?: number): number;
 }
 
 declare function InlineWebAssembly(wasm: string, importObject?: any): Promise<WasmModule>;
