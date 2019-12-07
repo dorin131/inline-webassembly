@@ -1,9 +1,10 @@
 {
-  "name": "inline-wasm",
+  "name": "inline-webassembly",
   "version": "1.0.0",
-  "description": "",
+  "description": "Inline WebAssembly (text format) into JS",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "repository": "github:dorin131/inline-webassembly",
   "scripts": {
     "test": "jest"
   },
