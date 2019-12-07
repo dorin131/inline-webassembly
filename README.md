@@ -2,11 +2,38 @@
 
 Write your WebAssembly functions quick and conveniently!
 
+## Installation
+
+```shell
+$ npm install --save inline-webassembly
+```
+
+## Usage
+
+```js
+const iw = require('inline-webassembly');
+// or
+import * as iw from 'inline-webassembly';
+```
+
+## API
+
+### WasmModule
+
+The constructor is going to return an instance of *WasmModule* which is an extension of the original WasmModule returned by the underlying <a href="https://www.npmjs.com/package/wabt">wabt</a> package.
+
+Additional helper methods:
+
+ #### *readString*(index: `number`, length?: `number`): `string`
+ Returns a string, provided an index, which should be a pointer in the module memory. 
+ #### *createString*(string: `string`, memoryLocation: `number`): `number`
+ Creates a string in the module memory and returns a pointer to it.
+
 ## Getting started
 
 ### Add two numbers
 
-```
+```js
 const iw = require('inline-webassembly');
 
 iw(`
@@ -25,7 +52,7 @@ iw(`
 
 ### Read a string from memory
 
-```
+```js
 const iw = require('inline-webassembly');
 
 iw(`
@@ -47,7 +74,7 @@ iw(`
 
 ### Call a JS function from WebAssembly
 
-```
+```js
 const iw = require('inline-webassembly');
 
 const sayHey = function() {
@@ -68,7 +95,7 @@ iw(`
 
 ### Reverse a string
 
-```
+```js
 const iw = require('inline-webassembly');
 
 iw(`
