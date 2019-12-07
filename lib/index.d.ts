@@ -3,6 +3,7 @@ import { WasmModule as WM } from "wabt";
 declare namespace InlineWebAssembly {}
 
 interface WasmModule extends WM {
+  [any: string]: any;
   /**
    * Read a string from the module memory by providing a pointer (the position of the first character).
    * 
