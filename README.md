@@ -24,9 +24,9 @@ The constructor is going to return an instance of *WasmModule* which is an exten
 
 Additional helper methods:
 
- #### *readString*(index: `number`, length?: `number`): `string`
+ **readString**(index: `number`, length?: `number`): `string`
  Returns a string, provided an index, which should be a pointer in the module memory. 
- #### *createString*(string: `string`, memoryLocation: `number`): `number`
+ **createString**(string: `string`, memoryLocation: `number`): `number`
  Creates a string in the module memory and returns a pointer to it.
 
 ## Getting started

@@ -1,4 +1,4 @@
-import { WasmModule as WM } from "wabt";
+import { WasmModule as WM } from 'wabt';
 
 declare namespace InlineWebAssembly {}
 
