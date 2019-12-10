@@ -8,7 +8,7 @@ Write your WebAssembly functions quick and conveniently!
 $ npm install --save inline-webassembly
 ```
 
-## Usage with NodeJS
+## Usage
 
 ```js
 const iw = require('inline-webassembly');
@@ -16,7 +16,7 @@ const iw = require('inline-webassembly');
 import * as iw from 'inline-webassembly';
 ```
 
-## Usage in browser
+## Loading in browser
 Assuming that your JS file is named `main.js`
 ```shell
 $ npm i -g browserify
