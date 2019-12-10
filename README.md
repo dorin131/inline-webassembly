@@ -1,6 +1,8 @@
 # inline-webassembly
+Easiest way to write WebAssembly
 
-Write your WebAssembly functions quick and conveniently!
+[![npm version](https://badge.fury.io/js/inline-webassembly.svg)](https://badge.fury.io/js/inline-webassembly)
+
 
 ## Installation
 
