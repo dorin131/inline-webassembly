@@ -29,6 +29,11 @@ then
 <script src="bundle.js"></script>
 ```
 
+## Syntax highlight (VS Code)
+To have WebAssembly syntax highlighting in VS Code, use extension: <a href="https://marketplace.visualstudio.com/items?itemName=dorin131.vscode-inline-webassembly&ssr=false#overview">Inline WebAssembly Syntax Highlight</a>
+
+<img src="./images/code.png" />
+
 ## API
 
 ### WasmModule
