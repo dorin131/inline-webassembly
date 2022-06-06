@@ -58,8 +58,8 @@ const iw = require('inline-webassembly');
 iw(`
   (module
     (func (export "add") (param $n1 i32) (param $n2 i32) (result i32)
-      get_local $n1
-      get_local $n2
+      local.get $n1
+      local.get $n2
       i32.add))`
 ).then((wasmModule) => {
   const sum = wasmModule.add(44, 99);
@@ -142,8 +142,8 @@ iw(`
         (i32.add
           ;; adding the string pointer with its length
           (i32.add
-            (get_local $sref)
-            (get_local $slen)
+            (local.get $sref)
+            (local.get $slen)
           )
           (i32.const 1)
         )
@@ -164,7 +164,7 @@ iw(`
           
           ;; store one character from original string to resulting string
           (i32.store
-            (get_local $write_to)
+            (local.get $write_to)
             ;; load 1 byte and sign-extend i8 to i32
             (i32.load8_s
               (i32.sub
@@ -173,7 +173,7 @@ iw(`
                     (get_local $sref)
                     (get_local $slen)
                   )
-                  (get_local $iterator)
+                  (local.get $iterator)
                 )
                 (i32.const 1)
               )
@@ -181,7 +181,7 @@ iw(`
           )
 
           ;; increment position to write to on next loop iteration
-          (set_local $write_to
+          (local.set $write_to
             (i32.add
               (get_local $write_to)
               (i32.const 1)  
@@ -189,9 +189,9 @@ iw(`
           )
 
           ;; increment iterator by 1 for every loop iteration
-          (set_local $iterator
+          (local.set $iterator
             (i32.add
-              (get_local $iterator)
+              (local.get $iterator)
               (i32.const 1)  
             )  
           )
@@ -199,8 +199,8 @@ iw(`
           ;; break loop if iterator reaches string length
           (br_if 1
             (i32.ge_s
-              (get_local $iterator)
-              (get_local $slen)
+              (local.get $iterator)
+              (local.get $slen)
             )
           )
           
@@ -210,7 +210,7 @@ iw(`
       )
 
       ;; returning result which contains pointer to the reversed string
-      (get_local $result)
+      (local.get $result)
     )
   )`
 ).then((wasmModule) => {
